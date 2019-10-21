@@ -1,15 +1,24 @@
 public class InitialCapitalize{
     public static String stringCapitalize(String s){
-        StringBuilder f = new StringBuilder(s);
+        StringBuilder f = new StringBuilder();
         
-        /*need fix
-        f.toUpperCase(s.charAt(0));
+        
+        f.append(Character.toUpperCase(s.charAt(0)));
 
-        for(int i = 0; i < f.length(); i++){
-            if(f.charAt(i).isBlank())
-                f.charAt(i+1).toUpperCase(f.charAt(0));
+        for(int i = 1; i < s.length(); i++){
+            if(s.charAt(i-1) == ' ' && s.charAt(i) != ' ')
+                f.append(Character.toUpperCase(s.charAt(i)));
+            else
+                f.append(s.charAt(i));        
         }
         
-        return f.toString();*/ 
+        return f.toString(); 
     }
+
+    public static void main(String[] args){
+        String string = "this is an amazing example";
+        System.out.println(stringCapitalize(string));
+        
+    }
+
 }
