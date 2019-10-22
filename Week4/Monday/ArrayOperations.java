@@ -3,14 +3,19 @@ import java.util.*;
 public class ArrayOperations{
     
     public static void printArray(int[] integers){
-        for(int integer:integers)
-            System.out.print(integer + " ");
-
-        System.out.println("");
+        
+        System.out.print("[");
+        for(int i = 0; i < integers.length; i++){
+            System.out.print(i);
+            if(i != integers.length - 1)
+                System.out.print(", ");
+        }
+        
+        System.out.println("]");
     }
 
-    public static int averageValues(int[] m){
-        int sum = 0;
+    public static double averageValues(int[] m){
+        double sum = 0;
         for(int medium: m)
             sum += medium;
         
@@ -33,10 +38,11 @@ public class ArrayOperations{
         int[] n = new int[array.length];
         Arrays.sort(array);
         int j = 0;
-        
+
         for(int i = 1; i < array.length; i++){
-            if(array[i-1] != array[i])
-                n[j++] = array[i-1];
+            if(array[i-1] != array[i]){
+                n[++j] = array[i-1];//issue fatal delete of elements
+            }
         }
 
         return Arrays.copyOf(n, j);
@@ -45,7 +51,7 @@ public class ArrayOperations{
     public static void main(String[] args){
         int[] numbers = {1, 8, -1, 24, 3};
         int[] average = {10, 4, 5, 2};
-        int[] dup = {1, 3, 5, 23, 5 , 1, 7, 7};
+        int[] dup = {3, 3, 3, 3};//error
         
         printArray(numbers);
         
