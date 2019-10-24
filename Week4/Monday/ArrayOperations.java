@@ -37,13 +37,7 @@ public class ArrayOperations{
     public static int[] deleteDuplicate(int[] array){
         int[] n = new int[array.length];
         Arrays.sort(array);
-        int j = 0;
-
-        for(int i = 1; i < array.length; i++){
-            if(array[i-1] != array[i]){
-                n[++j] = array[i-1];//issue fatal delete of elements
-            }
-        }
+        
 
         return Arrays.copyOf(n, j);
     }
@@ -51,7 +45,7 @@ public class ArrayOperations{
     public static void main(String[] args){
         int[] numbers = {1, 8, -1, 24, 3};
         int[] average = {10, 4, 5, 2};
-        int[] dup = {3, 3, 3, 3};//error
+        int[] dup = {3, 3, 3, 3}; //error
         
         printArray(numbers);
         
