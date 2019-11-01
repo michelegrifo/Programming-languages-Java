@@ -13,10 +13,11 @@ public class Author{
     }
 
     public String getAuthor(){
-        return this.name + this.surname + " ";
+        return this.name + " " + this.surname + " ";
     }
 
+    @Override
     public String toString(){
-        return ("Author" + this.getAuthor());
+        return (" " + this.getAuthor());
     }
 }

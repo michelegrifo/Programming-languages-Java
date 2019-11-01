@@ -12,46 +12,32 @@ public class Book{
         Scanner input = new Scanner(System.in);
         this.idNumber = counter++;
         
-        System.out.print("Number of author(s)");
-        int number = input.nextInt();
+        System.out.print("Number of author(s):");
+        int number = Integer.parseInt(input.nextLine());
         
         this.authors = new Author[number];
         for(int i = 0; i < this.authors.length; i++)
             this.authors[i] = new Author(); 
-        
+         
         System.out.print("\nTitle:");
         this.title = input.nextLine();
     
         System.out.print("\nSelling price:");
-        this.price = input.nextDouble();
+        this.price = Double.parseDouble(input.nextLine());
 
         System.out.print("\nPublisher:");
         this.publisher = input.nextLine();
     }
-     
-    public int getId(){
-        return this.idNumber;
-    }
-
-    public String getAuthors(){
-        return this.authors.toString();
-    }   
-
-    public String getTitle(){
-        return this.title;
-    }
-
-    public double getPrice(){
-        return this.price;
-    }
-
-    public String getPublisher(){
-        return this.publisher;
-    }
-
+    
+    @Override
     public String toString(){
-        return("\nID:"+ this.getId() + " Author(s):" + this.getAuthors() + 
-                " Title:" + this.getTitle() + " Price:" + this.getPrice() + 
-                " Publisher:" + this.getPublisher() +"\n");
+        
+        String tmp = "";
+        for(Author author : authors)
+            tmp += author.toString();
+
+        return("\nID:"+ this.idNumber + " Author(s): " + tmp + 
+                " Title: " + this.title + " Price: " + this.price + 
+                " Publisher: " + this.publisher +"\n");
     }
 }
