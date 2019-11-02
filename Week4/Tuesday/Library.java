@@ -35,8 +35,7 @@ public class Library{
             choice = input.nextInt();
             switch(choice){
                 case 1:
-                    for(Book book : library)
-                        System.out.println(library);
+                    System.out.println(library);
                     break;
                 case 2:
                     library.add(new Book());
