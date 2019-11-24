@@ -1,6 +1,6 @@
-import src.geometria.figurepiane.Cerchio;
-import src.geometria.figurepiane.Quadrato;
-import src.geometria.figuresolide.Cubo;
+import geometria.figurepiane.Cerchio;
+import geometria.figurepiane.Quadrato;
+import geometria.figuresolide.Cubo;
 
 public class Main{
     static public void main(String[] args){

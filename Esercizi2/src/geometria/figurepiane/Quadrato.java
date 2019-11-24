@@ -1,4 +1,4 @@
-package src.geometria.figurepiane;
+package geometria.figurepiane;
 
 public class Quadrato{
     double lato;
