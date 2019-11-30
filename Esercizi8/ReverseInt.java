@@ -7,15 +7,11 @@ public class ReverseInt{
         while(!check){
             try{
                 Scanner in = new Scanner(System.in);
-                System.out.println("Enter integer:");
-                int i = in.nextInt();
-                
-                if(i == 0){
-                    throw new ArithmeticException();
-                }
-                
+                System.out.println("Enter int:");
+                int i = in.nextInt();     
                 System.out.println("Result: " + (double) 1/i);
                 check = true;
+                in.close();
             }
             
             catch(InputMismatchException ex){
