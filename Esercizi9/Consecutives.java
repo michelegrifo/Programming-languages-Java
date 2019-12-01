@@ -12,8 +12,16 @@ public class Consecutives{
     }
 
     static boolean consecutives2(Set<Integer> s){
-        for(Integer i: s){
+        /*for(Integer i: s){
             if(s.contains(i+1))
+                return true;
+        }
+        return false;*/
+
+        Iterator<Integer> i = s.iterator();
+
+        while(i.hasNext()){
+            if(s.contains(i.next() + 1))
                 return true;
         }
         return false;
