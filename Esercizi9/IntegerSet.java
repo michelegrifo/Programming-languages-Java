@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class Consecutives{
+public class IntegerSet{
     
     static boolean consecutives(Set<Integer> s){
         for(int i = -10; i <= 10; i++){
@@ -17,7 +17,6 @@ public class Consecutives{
                 return true;
         }
         return false;*/
-
         Iterator<Integer> i = s.iterator();
 
         while(i.hasNext()){
@@ -27,12 +26,27 @@ public class Consecutives{
         return false;
     }
 
+    static void deleteEven(Set<Integer> s){
+        Iterator<Integer> i = s.iterator();
+
+        while(i.hasNext()){
+            if((i.next() % 2) == 0)
+                i.remove();
+        }
+    }
+
     public static void main(String[] args){
         Set<Integer> numbers = new HashSet<Integer>();
         numbers.add(10);
         numbers.add(5);
-        numbers.add (4);
+        numbers.add(4);
+        numbers.add(13);
+        
         System.out.println(consecutives(numbers));
         System.out.println(consecutives2(numbers));
+        
+        deleteEven(numbers);
+        for(Integer i : numbers)
+            System.out.println(i);
     }
 }
