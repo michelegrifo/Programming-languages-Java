@@ -8,12 +8,12 @@ public class ArrayStack<T> implements Stack<T>{
     @SuppressWarnings("unchecked")
     private T[] elements = (T[]) new Object[1];
 
-    private void resize(int newtotal){
+    private void resize(int newTotal){
         @SuppressWarnings("unchecked")
-        T[] tmp = (T[]) new Object[newtotal];
+        T[] tmp = (T[]) new Object[newTotal];
         System.arraycopy(elements, 0, tmp, 0, last);
         elements = tmp;
-        total = newtotal;
+        total = newTotal;
     }
 
     public void push(T element){
@@ -22,8 +22,7 @@ public class ArrayStack<T> implements Stack<T>{
             System.out.println("\nSize:" + total);
         }
         
-        elements[last] = element;
-        last++;
+        elements[last++] = element;
     }
 
     public T pop(){
@@ -47,7 +46,7 @@ public class ArrayStack<T> implements Stack<T>{
     }
 
     public void clear(){
-        for(int i = 0; i < total; i++)
+        for(int i = 0; i < last; i++)
             elements[i] = null;
         
         last = 1;
@@ -60,7 +59,7 @@ public class ArrayStack<T> implements Stack<T>{
     }
 
     public boolean isEmpty(){
-       return last == 1 ? true : false;
+       return last == 1;
     }
 
 }
