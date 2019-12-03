@@ -1,25 +1,27 @@
+package Stack;
 import java.util.*;
 import java.io.*;
 
-public class ArrayListQueue<T> implements Queue<T>{
-    private ArrayList<T> elements = new ArrayList<>();
+public class LinkedListStack<T> implements Stack<T>{
     
-    public void enqueue(T element){
-        elements.add(element);
+    private LinkedList<T> elements = new LinkedList<>();
+
+    public void push(T element){
+        elements.addLast(element);
     }
 
-    public T dequeue(){
+    public T pop(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
         else 
-            return elements.remove(0);
+            return elements.removeLast();
     }
 
     public T top(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
-        else    
-            return elements.get(0);
+        else
+            return elements.getLast();
     }
 
     public void clear(){
@@ -30,9 +32,8 @@ public class ArrayListQueue<T> implements Queue<T>{
         return elements.size();
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return elements.isEmpty();
     }
-
 
 }

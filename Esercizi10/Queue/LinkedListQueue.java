@@ -1,7 +1,8 @@
+package Queue;
 import java.util.*;
-import java.io*;
+import java.io.*;
 
-public LinkedList<T> implements Queue<T>{
+public class LinkedListQueue<T> implements Queue<T>{
     private LinkedList<T> elements = new LinkedList<T>();
 
     public void enqueue(T element){

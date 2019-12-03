@@ -1,26 +1,26 @@
+package Stack;
 import java.util.*;
 import java.io.*;
 
-public class LinkedListStack<T> implements Stack<T>{
-    
-    private LinkedList<T> elements = new LinkedList<>();
+public class ArrayListStack<T> implements Stack<T>{
+    private ArrayList<T> elements = new ArrayList<T>();
 
     public void push(T element){
-        elements.addLast(element);
+        elements.add(element);
     }
 
     public T pop(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
         else 
-            return elements.removeLast();
+            return elements.remove(elements.size()-1);
     }
 
     public T top(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
-        else
-            return elements.getLast();
+        else 
+            return elements.get(elements.size()-1);
     }
 
     public void clear(){
@@ -31,7 +31,7 @@ public class LinkedListStack<T> implements Stack<T>{
         return elements.size();
     }
 
-    public boolean isEmpty() {
+    public boolean isEmpty(){
         return elements.isEmpty();
     }
 

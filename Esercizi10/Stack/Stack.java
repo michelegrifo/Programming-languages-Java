@@ -1,3 +1,4 @@
+package Stack;
 import java.util.*;
 public interface Stack<E>{
     void push(E element);

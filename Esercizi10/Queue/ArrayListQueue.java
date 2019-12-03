@@ -1,25 +1,26 @@
+package Queue;
 import java.util.*;
 import java.io.*;
 
-public class ArrayListStack<T> implements Stack<T>{
-    private ArrayList<T> elements = new ArrayList<T>();
-
-    public void push(T element){
+public class ArrayListQueue<T> implements Queue<T>{
+    private ArrayList<T> elements = new ArrayList<>();
+    
+    public void enqueue(T element){
         elements.add(element);
     }
 
-    public T pop(){
+    public T dequeue(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
         else 
-            return elements.remove(elements.size()-1);
+            return elements.remove(0);
     }
 
     public T top(){
         if(elements.isEmpty())
             throw new NoSuchElementException();
-        else 
-            return elements.get(elements.size()-1);
+        else    
+            return elements.get(0);
     }
 
     public void clear(){
@@ -33,5 +34,6 @@ public class ArrayListStack<T> implements Stack<T>{
     public boolean isEmpty(){
         return elements.isEmpty();
     }
+
 
 }
