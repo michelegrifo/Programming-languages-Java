@@ -6,7 +6,7 @@ public class ArrayOperations{
         
         System.out.print("[");
         for(int i = 0; i < integers.length; i++){
-            System.out.print(i);
+            System.out.print(integers[i]);
             if(i != integers.length - 1)
                 System.out.print(", ");
         }
@@ -34,18 +34,41 @@ public class ArrayOperations{
         return Arrays.copyOf(evenArray, j);
     }
     
+    public static boolean contains(int [] a, int n){
+        boolean check = false;
+        
+        for(int i = 0; i < a.length; i++){
+            if(a[i] == n){
+                check = true;
+                break;
+            }
+        }
+    
+        return check;
+    }
+
+
     public static int[] deleteDuplicate(int[] array){
         int[] n = new int[array.length];
+        int c = 0, r = 0;
         Arrays.sort(array);
-        
 
-        return Arrays.copyOf(n, j);
+        for(int i = 0; i < array.length; i++){
+            for(int j = 1; j < array.length; j++){
+                if(array[j] == array[i])
+                    c++;
+            }
+            
+            if(c > 1 && !contains(n, array[i]))
+                n[r++] = array[i];
+        }
+        return Arrays.copyOf(n, r);
     }
     
     public static void main(String[] args){
         int[] numbers = {1, 8, -1, 24, 3};
         int[] average = {10, 4, 5, 2};
-        int[] dup = {3, 3, 3, 3}; //error
+        int[] dup = {3, 3, 3, 3};
         
         printArray(numbers);
         
