@@ -26,12 +26,12 @@ public class ArrayStack<T> implements Stack<T>{
         elements[last++] = element;
     }
 
-    public T pop(){
+    public T pop() throws NoSuchElementException{
         if(last == total/4){
             resize(total/2);
             System.out.println("\nSize:" + total);
         }
-        if(last == 1)
+        if(isEmpty())
             throw new NoSuchElementException();
 
         T element = elements[last-1];
@@ -39,8 +39,8 @@ public class ArrayStack<T> implements Stack<T>{
         return element;
     }
 
-    public T top(){
-        if(last == 1)
+    public T top()throws NoSuchElementException{
+        if(isEmpty())
             throw new NoSuchElementException();
 
         return elements[last];
